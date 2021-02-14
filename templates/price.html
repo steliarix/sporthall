@@ -6,21 +6,21 @@
 				  <div class="card-body">
 				    <h5 class="card-title">BRONZE CARD</h5>
 				    <p class="card-text">-Не ограниченое время в спортзале <br> -душ <br><br><br></p>
-				    <h3>199 грн./мес.</h3>
+				    <h3>{{ pc_1 }} грн./мес.</h3>
 				  </div>
 				</div>
 				<div class="card product_card" style="width: 18rem; background-color: #c0c0c0;">
 				  <div class="card-body">
 				    <h5 class="card-title">SILVER CARD</h5>
 				    <p class="card-text">-Не ограниченое время в спортзале <br> -душ <br> -бассейн <br><br></p>
-				    <h3>479 грн./мес.</h3>
+				    <h3>{{ pc_2 }} грн./мес.</h3>
 				  </div>
 				</div>
 				<div class="card product_card" style="width: 18rem; background-color: #ffd700;">
 				  <div class="card-body">
 				    <h5 class="card-title">GOLD CARD</h5>
 				    <p class="card-text">-Не ограниченое время в спортзале <br> -душ <br> -бассейн <br> -питание</p>
-				    <h3>980 грн./мес.</h3>
+				    <h3>{{ pc_3 }} грн./мес.</h3>
 				  </div>
 				</div>
   			</div>
@@ -38,21 +38,15 @@
 			    </tr>
 			  </thead>
 			  <tbody>
+
+              {% for obj in price_table %}
 			    <tr>
-			      <td>1 тренировка с тренером</td>
-			      <td><del>200 грн</del></td>
-			      <td>100 грн</td>
+			      <td>{{ obj.pt_title}}</td>
+			      <td><del>{{ obj.pt_old_price }} грн</del></td>
+			      <td>{{ obj.pt_new_price }} грн</td>
 			    </tr>
-			    <tr>
-			      <td>Пакет тренировок с тренером (12 тренировок)</td>
-			      <td><del>2000 грн</del></td>
-			      <td>1500 грн</td>
-			    </tr>
-			    <tr>
-			      <td>Правильное питание на день (3 порции)</td>
-			      <td><del>500 грн</del></td>
-			      <td>450 грн</td>
-			    </tr>
+              {% endfor %}
+
 			  </tbody>
 			</table>
   		</div>
